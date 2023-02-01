@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient"
-    tools:context=".ui.regiserpage.MainActivity">
+    tools:context=".ui.regiserpage.RegisteredUsersActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/uiTvTitle"
@@ -14,7 +14,7 @@
         android:drawableStart="@drawable/baseline_person_pin_24"
         android:text="Digi Class"
         android:drawablePadding="5dp"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/uiCvCard"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="30dp"
-                android:text="Sign Up"
-                android:textSize="18sp"
+                android:text="Welcome"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,6 +59,7 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusBottomEnd="10dp"
+                app:startIconDrawable="@drawable/baseline_person_pin_24"
                 app:layout_constraintStart_toStartOf="@+id/uiTvLogin"
                 app:layout_constraintEnd_toEndOf="@+id/uiTvLogin"
                 app:layout_constraintTop_toBottomOf="@+id/uiTvLogin">
@@ -81,6 +82,8 @@
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusBottomEnd="10dp"
+                app:passwordToggleEnabled="true"
+                app:startIconDrawable="@drawable/baseline_lock"
                 app:layout_constraintStart_toStartOf="@+id/uiTILUserNameLable"
                 app:layout_constraintEnd_toEndOf="@+id/uiTILUserNameLable"
                 app:layout_constraintTop_toBottomOf="@+id/uiTILUserNameLable">
@@ -89,108 +92,22 @@
                     android:id="@+id/uiTvUserEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter your Email :" />
+                    android:hint="Enter your Password :"
+                    android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/uiTILPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:passwordToggleEnabled="true"
-                app:layout_constraintEnd_toEndOf="@+id/uiTILUserEmailLable"
-                app:layout_constraintStart_toStartOf="@+id/uiTILUserEmailLable"
-                app:layout_constraintTop_toBottomOf="@+id/uiTILUserEmailLable">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/uiTvPassword"
-                    android:inputType="textPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password :" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/uiTILConfirmPassword"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:layout_marginHorizontal="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:passwordToggleEnabled="true"
-                app:layout_constraintEnd_toEndOf="@+id/uiTILPassword"
-                app:layout_constraintStart_toStartOf="@+id/uiTILPassword"
-                app:layout_constraintTop_toBottomOf="@+id/uiTILPassword">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/uiTvConfirmPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="Confirm Password :" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <RadioGroup
-                android:id="@+id/uiRgGender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="20dp"
-                android:padding="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uiTILConfirmPassword">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/uiTvGenderTile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gender :"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <RadioButton
-                    android:id="@+id/uiRbGenderMale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Male" />
-
-                <RadioButton
-                    android:id="@+id/uiRbGenderFemale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Female" />
-
-                <RadioButton
-                    android:id="@+id/uiRbGenderThird"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Third" />
-
-            </RadioGroup>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/uiBtSubmit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:text="Sign Up"
+                android:layout_marginVertical="20dp"
                 android:background="@drawable/button_corners"
+                android:text="Sign In"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uiRgGender" />
+                app:layout_constraintEnd_toEndOf="@+id/uiTILUserEmailLable"
+                app:layout_constraintStart_toStartOf="@+id/uiTILUserEmailLable"
+                app:layout_constraintTop_toBottomOf="@+id/uiTILUserEmailLable" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/uiTvNavigateToSignIn"
@@ -199,12 +116,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/uiBtSubmit"
                 app:layout_constraintStart_toStartOf="@+id/uiBtSubmit"
                 app:layout_constraintEnd_toEndOf="@+id/uiBtSubmit"
-                android:layout_marginVertical="10dp"
+                android:layout_marginVertical="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:text="Already Have an account SignIn" />
+                android:text="Doesn't Have an account SignUp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

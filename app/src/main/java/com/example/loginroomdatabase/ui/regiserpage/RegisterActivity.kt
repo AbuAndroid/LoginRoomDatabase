@@ -1,5 +1,6 @@
 package com.example.loginroomdatabase.ui.regiserpage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -54,8 +55,11 @@ class MainActivity : AppCompatActivity() {
     private fun insertDataToDb() {
         val name = binding?.uiTvUserName?.text.toString()
         val password = binding?.uiTvPassword?.text.toString()
-        val user = User(1, name, password = password)
+        val email = binding?.uiTvUserEmail?.text.toString()
+        val gender = binding?.uiRgGender?.checkedRadioButtonId.toString()
+        val user = User(0, name = name, password = password, email = email, gender = gender)
         if (inputCheck(name, password)) {
+            startActivity(Intent(this,RegisteredUsersActivity::class.java))
             CoroutineScope(Dispatchers.IO).launch {
                 registerViewModel.insert(user)
             }
